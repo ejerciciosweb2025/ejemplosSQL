@@ -1,6 +1,4 @@
-SELECT name, continent 
-FROM world AS x 
-WHERE population > ALL(SELECT population*3 
-                       FROM world AS y 
-                       WHERE y.continent = x.continent 
-                       AND y.name <> x.name)
+select yr,subject,winner
+from nobel
+where yr <1910 and subject ='Medicine'
+or yr>=2004 and subject='Literature' 

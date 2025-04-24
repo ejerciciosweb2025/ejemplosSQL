@@ -1,7 +1,3 @@
-SELECT name, 
-       CONCAT(CAST(ROUND(population/(SELECT population
-                                     FROM world 
-                                     WHERE name = 'Germany')
-                         *100, 0) AS int), '%') AS percentage
-FROM world
-WHERE continent = 'Europe';
+select yr, subject, winner
+from nobel
+where yr >=1980 and yr <=1989 and subject='Literature'
