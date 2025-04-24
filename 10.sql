@@ -1,6 +1,2 @@
-SELECT name, continent 
-FROM world AS x 
-WHERE population > ALL(SELECT population*3 
-                       FROM world AS y 
-                       WHERE y.continent = x.continent 
-                       AND y.name <> x.name)
+SELECT teacher.name, CASE WHEN dept IN (1,2) THEN 'Sci' WHEN dept=3 THEN 'Art' ELSE 'None' END
+ FROM teacher LEFT JOIN dept ON (teacher.dept=dept.id)

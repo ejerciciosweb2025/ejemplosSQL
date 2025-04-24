@@ -1,8 +1,3 @@
-SELECT continent, name
-FROM world
-WHERE name IN (SELECT MIN(name) 
-               FROM world 
-               GROUP BY continent)
-
-select continent, min(name) as name from world
-group by continent
+SELECT dept.name, count(teacher.name)
+ FROM teacher RIGHT JOIN dept ON (teacher.dept = dept.id)
+group by dept.name
