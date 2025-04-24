@@ -1,8 +1,3 @@
-SELECT continent, name
-FROM world
-WHERE name IN (SELECT MIN(name) 
-               FROM world 
-               GROUP BY continent)
-
-select continent, min(name) as name from world
-group by continent
+SELECT distinct player
+  FROM game INNER JOIN goal ON game.id=goal.matchid
+ WHERE ( (team2='GER' ) or (team1='GER') ) and teamid != 'GER'

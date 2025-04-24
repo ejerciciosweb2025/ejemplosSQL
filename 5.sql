@@ -1,7 +1,3 @@
-SELECT name, 
-       CONCAT(CAST(ROUND(population/(SELECT population
-                                     FROM world 
-                                     WHERE name = 'Germany')
-                         *100, 0) AS int), '%') AS percentage
-FROM world
-WHERE continent = 'Europe';
+SELECT player, teamid, coach,gtime
+  FROM goal INNER JOIN eteam ON teamid=id
+ WHERE gtime<=10

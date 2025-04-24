@@ -1,8 +1,3 @@
-SELECT continent, name, area
-FROM world
-WHERE area IN (SELECT MAX(area) 
-               FROM world 
-               GROUP BY continent);
-
-               select name from world 
-where gdp > ALL (select gdp from world where continent = 'Europe' and gdp IS NOT NULL) 
+SELECT mdate, teamname
+  FROM game INNER JOIN eteam ON game.team1=eteam.id
+where coach LIKE 'Fernando Santos%'
