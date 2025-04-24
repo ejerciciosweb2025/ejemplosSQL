@@ -1,7 +1,4 @@
-SELECT name, 
-       CONCAT(CAST(ROUND(population/(SELECT population
-                                     FROM world 
-                                     WHERE name = 'Germany')
-                         *100, 0) AS int), '%') AS percentage
-FROM world
-WHERE continent = 'Europe';
+SELECT a.company, a.num, a.stop, b.stop
+FROM route a JOIN route b ON
+  (a.company=b.company AND a.num=b.num)
+WHERE a.stop=53 and b.stop=149

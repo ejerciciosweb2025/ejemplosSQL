@@ -1,8 +1,6 @@
-SELECT continent, name, area
-FROM world
-WHERE area IN (SELECT MAX(area) 
-               FROM world 
-               GROUP BY continent);
-
-               select name from world 
-where gdp > ALL (select gdp from world where continent = 'Europe' and gdp IS NOT NULL) 
+SELECT a.company, a.num, stopa.name, stopb.name
+FROM route a JOIN route b ON
+  (a.company=b.company AND a.num=b.num)
+  JOIN stops stopa ON (a.stop=stopa.id)
+  JOIN stops stopb ON (b.stop=stopb.id)
+WHERE stopa.name='Craiglockhart' and stopb.name='London Road'
