@@ -1,6 +1,5 @@
-SELECT name, continent 
-FROM world AS x 
-WHERE population > ALL(SELECT population*3 
-                       FROM world AS y 
-                       WHERE y.continent = x.continent 
-                       AND y.name <> x.name)
+select movie.title,actor.name
+from movie 
+inner join casting ON movie.id=casting.movieid
+inner join actor ON casting.actorid=actor.id
+where yr=1962 and ord=1

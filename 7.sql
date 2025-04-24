@@ -1,4 +1,4 @@
-select movie.title
+select actor.name
 from movie inner join casting ON movie.id=casting.movieid
 inner join actor ON casting.actorid=actor.id
-where actor.name LIKE 'Harrison Ford'
+where title LIKE 'Alien'

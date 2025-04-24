@@ -1,7 +1,3 @@
-SELECT name, 
-       CONCAT(CAST(ROUND(population/(SELECT population
-                                     FROM world 
-                                     WHERE name = 'Germany')
-                         *100, 0) AS int), '%') AS percentage
-FROM world
-WHERE continent = 'Europe';
+select distinct id
+from movie inner join casting ON movie.id=casting.movieid
+where title='Casablanca'
