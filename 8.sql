@@ -1,8 +1,3 @@
-SELECT continent, name
-FROM world
-WHERE name IN (SELECT MIN(name) 
-               FROM world 
-               GROUP BY continent)
-
-select continent, min(name) as name from world
-group by continent
+select name, population, area
+from world
+where population > 250000000 xor area >3000000
